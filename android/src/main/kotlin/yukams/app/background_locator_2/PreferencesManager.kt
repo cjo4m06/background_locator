@@ -204,7 +204,7 @@ class PreferencesManager {
         fun getDataCallback(context: Context, key: String): Map<*, *> {
             val initialDataStr = context.getSharedPreferences(Keys.SHARED_PREFERENCES_KEY, Context.MODE_PRIVATE)
                     .getString(key, null)
-            val type = object : TypeToken<Map<*, *>>() {}.type
+            val type = object : TypeToken<Map<String, Any>>() {}.type
             return Gson().fromJson(initialDataStr, type)
         }
     }
